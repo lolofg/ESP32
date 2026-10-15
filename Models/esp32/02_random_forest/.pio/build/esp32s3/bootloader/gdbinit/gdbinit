@@ -1,0 +1,2 @@
+source /home/berat/Documents/Master/Models/esp32/02_random_forest/.pio/build/esp32s3/bootloader/gdbinit/symbols
+source /home/berat/Documents/Master/Models/esp32/02_random_forest/.pio/build/esp32s3/bootloader/gdbinit/connect

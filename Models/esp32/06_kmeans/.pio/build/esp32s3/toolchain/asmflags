@@ -1,0 +1,5 @@
+-mlongcalls
+-fno-builtin-memcpy
+-fno-builtin-memset
+-fno-builtin-bzero
+"-specs=/home/berat/Documents/Master/Models/esp32/06_kmeans/.pio/build/esp32s3/specs/picolibc.specs"

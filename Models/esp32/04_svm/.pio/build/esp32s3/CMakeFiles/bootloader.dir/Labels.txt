@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/home/berat/Documents/Master/Models/esp32/04_svm/.pio/build/esp32s3/CMakeFiles/bootloader
+/home/berat/Documents/Master/Models/esp32/04_svm/.pio/build/esp32s3/CMakeFiles/bootloader.rule
+/home/berat/Documents/Master/Models/esp32/04_svm/.pio/build/esp32s3/CMakeFiles/bootloader-complete.rule
+/home/berat/Documents/Master/Models/esp32/04_svm/.pio/build/esp32s3/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/home/berat/Documents/Master/Models/esp32/04_svm/.pio/build/esp32s3/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/home/berat/Documents/Master/Models/esp32/04_svm/.pio/build/esp32s3/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/home/berat/Documents/Master/Models/esp32/04_svm/.pio/build/esp32s3/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/home/berat/Documents/Master/Models/esp32/04_svm/.pio/build/esp32s3/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/home/berat/Documents/Master/Models/esp32/04_svm/.pio/build/esp32s3/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/home/berat/Documents/Master/Models/esp32/04_svm/.pio/build/esp32s3/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

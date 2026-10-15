@@ -1,0 +1,2 @@
+source /home/berat/Documents/Master/Models/esp32/06_kmeans/.pio/build/esp32s3/gdbinit/symbols
+source /home/berat/Documents/Master/Models/esp32/06_kmeans/.pio/build/esp32s3/gdbinit/connect

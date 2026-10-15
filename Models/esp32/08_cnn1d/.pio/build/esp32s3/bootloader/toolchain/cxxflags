@@ -1,0 +1,6 @@
+"-specs=/home/berat/Documents/Master/Models/esp32/08_cnn1d/.pio/build/esp32s3/bootloader/specs/picolibc.specs"
+-mlongcalls
+-fno-builtin-memcpy
+-fno-builtin-memset
+-fno-builtin-bzero
+-fno-rtti

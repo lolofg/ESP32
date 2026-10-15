@@ -1,0 +1,10 @@
+# 240 MHz CPU, 4 MB flash, 3 MB app partition (partitions.csv) for bigger models
+CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ_240=y
+CONFIG_ESPTOOLPY_FLASHSIZE_4MB=y
+CONFIG_ESP_MAIN_TASK_STACK_SIZE=8192
+CONFIG_COMPILER_OPTIMIZATION_PERF=y
+# the self-test loop is short, but don't reset if a big model takes a while
+CONFIG_ESP_TASK_WDT_TIMEOUT_S=20
+
+CONFIG_PARTITION_TABLE_CUSTOM=y
+CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions.csv"
