@@ -1,0 +1,12 @@
+model,chosen settings
+Decision Tree,"{'max_depth': 10, 'min_samples_leaf': 2}"
+Random Forest,"{'n_estimators': 10, 'max_depth': 14}"
+XGBoost,"{'n_estimators': 25, 'max_depth': 6, 'learning_rate': 0.5}"
+Logistic Regression,"{'C': 1, 'l1_ratio': 0, 'solver': 'saga'}"
+Linear SVM,{'C': 0.01}
+RBF SVM,"{'C': 10, 'gamma': 0.1}"
+Naive Bayes,{'var_smoothing': 0.001}
+K-Means,"{'n_clusters': 64, 'percentile': 90, 'n_init': 5, 'init': 'k-means++'}"
+MLP,"{'layers': (16, 8), 'dropout': 0.0, 'activation': 'relu', 'learning_rate': 0.003}"
+1D-CNN,"{'conv_layers': (8, 16), 'dense_layers': (16,), 'kernel_size': 5, 'learning_rate': 0.003}"
+Autoencoder,"{'layers': (32, 8), 'percentile': 90, 'learning_rate': 0.003}"

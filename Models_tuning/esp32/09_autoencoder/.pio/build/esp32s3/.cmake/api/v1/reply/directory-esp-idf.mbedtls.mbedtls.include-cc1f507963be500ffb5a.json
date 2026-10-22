@@ -1,0 +1,77 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"/home/berat/.platformio/packages/framework-espidf/components/mbedtls/mbedtls/include/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 7,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 13,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "include/mbedtls",
+			"paths" : 
+			[
+				"/home/berat/.platformio/packages/framework-espidf/components/mbedtls/mbedtls/include/mbedtls/build_info.h",
+				"/home/berat/.platformio/packages/framework-espidf/components/mbedtls/mbedtls/include/mbedtls/debug.h",
+				"/home/berat/.platformio/packages/framework-espidf/components/mbedtls/mbedtls/include/mbedtls/error.h",
+				"/home/berat/.platformio/packages/framework-espidf/components/mbedtls/mbedtls/include/mbedtls/mbedtls_config.h",
+				"/home/berat/.platformio/packages/framework-espidf/components/mbedtls/mbedtls/include/mbedtls/net_sockets.h",
+				"/home/berat/.platformio/packages/framework-espidf/components/mbedtls/mbedtls/include/mbedtls/oid.h",
+				"/home/berat/.platformio/packages/framework-espidf/components/mbedtls/mbedtls/include/mbedtls/pkcs7.h",
+				"/home/berat/.platformio/packages/framework-espidf/components/mbedtls/mbedtls/include/mbedtls/ssl.h",
+				"/home/berat/.platformio/packages/framework-espidf/components/mbedtls/mbedtls/include/mbedtls/ssl_cache.h",
+				"/home/berat/.platformio/packages/framework-espidf/components/mbedtls/mbedtls/include/mbedtls/ssl_ciphersuites.h",
+				"/home/berat/.platformio/packages/framework-espidf/components/mbedtls/mbedtls/include/mbedtls/ssl_cookie.h",
+				"/home/berat/.platformio/packages/framework-espidf/components/mbedtls/mbedtls/include/mbedtls/ssl_ticket.h",
+				"/home/berat/.platformio/packages/framework-espidf/components/mbedtls/mbedtls/include/mbedtls/timing.h",
+				"/home/berat/.platformio/packages/framework-espidf/components/mbedtls/mbedtls/include/mbedtls/version.h",
+				"/home/berat/.platformio/packages/framework-espidf/components/mbedtls/mbedtls/include/mbedtls/x509.h",
+				"/home/berat/.platformio/packages/framework-espidf/components/mbedtls/mbedtls/include/mbedtls/x509_crl.h",
+				"/home/berat/.platformio/packages/framework-espidf/components/mbedtls/mbedtls/include/mbedtls/x509_crt.h",
+				"/home/berat/.platformio/packages/framework-espidf/components/mbedtls/mbedtls/include/mbedtls/x509_csr.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "include/mbedtls/private",
+			"paths" : 
+			[
+				"/home/berat/.platformio/packages/framework-espidf/components/mbedtls/mbedtls/include/mbedtls/private/config_adjust_ssl.h",
+				"/home/berat/.platformio/packages/framework-espidf/components/mbedtls/mbedtls/include/mbedtls/private/config_adjust_x509.h"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "esp-idf/mbedtls/mbedtls/include",
+		"source" : "/home/berat/.platformio/packages/framework-espidf/components/mbedtls/mbedtls/include"
+	}
+}
