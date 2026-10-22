@@ -53,17 +53,50 @@ def parse_result_line(line):
     return dict(zip(SELFTEST_COLUMNS, values))
 
 
+# Descriptive column names for results/device_results.csv (short internal name -> CSV title).
+# The order here is the column order in the file.
+COLUMN_TITLES = {
+    "project":                 "Project",
+    "model":                   "Model",
+    "time":                    "Tested at",
+    # serial test: samples sent from the PC one by one over USB
+    "samples":                 "Serial test samples",
+    "accuracy_pct":            "Serial test accuracy (%)",
+    "agreement_pct":           "Serial test agreement with Python (%)",
+    # self-test: samples built into the firmware, run right after reset
+    "selftest_samples":        "Self-test samples",
+    "selftest_accuracy_pct":   "Self-test accuracy (%)",
+    "selftest_agreement_pct":  "Self-test agreement with Python (%)",
+    # speed (measured on the ESP32 with the CPU cycle counter, USB time not included)
+    "preprocess_us":           "Preprocessing time (us)",
+    "inference_us":            "Inference time - model only (us)",
+    "latency_mean_us":         "Latency per request - mean (us)",
+    "latency_median_us":       "Latency per request - median (us)",
+    "latency_max_us":          "Latency per request - max (us)",
+    # memory
+    "model_flash_bytes":       "Model size in flash (bytes)",
+    "model_ram_bytes":         "Model RAM - TFLM tensor arena (bytes)",
+    "heap_used_by_init_bytes": "Heap used by model init (bytes)",
+    "min_free_heap_bytes":     "Minimum free heap (bytes)",
+}
+
+
 def save_row(path, row):
-    """Write one row per project: a new test of the same project replaces its old row."""
+    """Write one row per project: a new test of the same project replaces its old row.
+    `row` uses the short names; the file gets the descriptive titles from COLUMN_TITLES."""
     path.parent.mkdir(parents=True, exist_ok=True)
+    new_row = {COLUMN_TITLES[k]: v for k, v in row.items()}
     rows = []
     if path.exists():
-        with open(path, newline="") as f:
-            rows = [r for r in csv.DictReader(f) if r.get("project") != row["project"]]
-    rows.append(row)
-    rows.sort(key=lambda r: r["project"])
-    with open(path, "w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=list(row.keys()))
+        with open(path, newline="", encoding="utf-8") as f:
+            for r in csv.DictReader(f):
+                r = {COLUMN_TITLES.get(k, k): v for k, v in r.items()}   # old files with short names
+                if r.get("Project") != new_row["Project"]:
+                    rows.append(r)
+    rows.append(new_row)
+    rows.sort(key=lambda r: r["Project"])
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=list(COLUMN_TITLES.values()), extrasaction="ignore")
         writer.writeheader()
         writer.writerows(rows)
 

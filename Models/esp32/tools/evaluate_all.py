@@ -50,15 +50,18 @@ def print_summary():
     """Print the most important columns of device_results.csv as a table."""
     if not RESULTS_FILE.exists():
         return
-    rows = list(csv.DictReader(open(RESULTS_FILE, newline="")))
+    rows = list(csv.DictReader(open(RESULTS_FILE, newline="", encoding="utf-8")))
     print("\n" + "=" * 92)
     print(f"{'project':<24}{'accuracy %':>11}{'agree %':>9}{'inference us':>14}"
           f"{'per request us':>16}{'flash B':>9}{'RAM B':>8}")
     print("-" * 92)
     for r in rows:
-        print(f"{r['project']:<24}{float(r['accuracy_pct']):>11.2f}{float(r['agreement_pct']):>9.2f}"
-              f"{r.get('inference_us', ''):>14}{float(r['latency_mean_us']):>16.1f}"
-              f"{r.get('model_flash_bytes', ''):>9}{r.get('model_ram_bytes', ''):>8}")
+        print(f"{r['Project']:<24}{float(r['Serial test accuracy (%)']):>11.2f}"
+              f"{float(r['Serial test agreement with Python (%)']):>9.2f}"
+              f"{r.get('Inference time - model only (us)', ''):>14}"
+              f"{float(r['Latency per request - mean (us)']):>16.1f}"
+              f"{r.get('Model size in flash (bytes)', ''):>9}"
+              f"{r.get('Model RAM - TFLM tensor arena (bytes)', ''):>8}")
     print("=" * 92)
     print(f"full results: {RESULTS_FILE}")
 

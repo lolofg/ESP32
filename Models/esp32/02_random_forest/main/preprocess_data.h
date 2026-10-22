@@ -8,24 +8,24 @@
 static const char *const FEATURE_NAMES[N_FEATURES] = {
     "src_pkts",
     "src_ip_bytes",
-    "dst_port",
     "dst_ip_bytes",
+    "dst_port",
     "proto",
     "dns_rejected",
     "conn_state",
-    "dns_RA",
-    "dns_RD",
-    "service",
     "dst_pkts",
+    "dns_RA",
+    "service",
+    "dns_RD",
     "dns_qtype",
     "dns_AA",
     "dst_bytes",
-    "duration",
     "src_bytes",
+    "duration",
     "dns_qclass",
     "dns_rcode",
     "ssl_version",
-    "ssl_resumed"
+    "ssl_established"
 };
 
 // Integer codes of the text features (0 = '-'):
@@ -33,20 +33,20 @@ static const char *const FEATURE_NAMES[N_FEATURES] = {
 //   dns_rejected: -=0, F=1, T=2
 //   conn_state: -=0, OTH=1, REJ=2, RSTO=3, RSTOS0=4, RSTR=5, RSTRH=6, S0=7, S1=8, S2=9, S3=10, SF=11, SH=12, SHR=13
 //   dns_RA: -=0, F=1, T=2
-//   dns_RD: -=0, F=1, T=2
 //   service: -=0, dce_rpc=1, dns=2, ftp=3, gssapi=4, http=5, smb=6, smb;gssapi=7, ssl=8
+//   dns_RD: -=0, F=1, T=2
 //   dns_AA: -=0, F=1, T=2
 //   ssl_version: -=0, TLSv10=1, TLSv12=2, TLSv13=3
-//   ssl_resumed: -=0, F=1, T=2
+//   ssl_established: -=0, F=1, T=2
 
 static const uint8_t FEATURE_LOG1P[20] = {
-    1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0
+    1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0
 };
 static const float FEATURE_MEAN[20] = {
-    1.70458102f, 5.55316496f, 5.094769f, 4.86591721f, 2.19250345f, 0.200583965f, 8.21267033f, 0.19793576f, 0.268839538f, 2.21090508f,
-    1.13267422f, 0.266984195f, 0.173572347f, 3.65423465f, 0.625140131f, 2.94455194f, 0.244783893f, 0.173979759f, 0.00911251456f, 0.00492972089f
+    1.70332539f, 5.54849052f, 4.84462547f, 5.10168982f, 2.19338632f, 0.202376589f, 8.19361687f, 1.1262418f, 0.199320972f, 2.19851971f,
+    0.271175385f, 0.265479892f, 0.173504442f, 3.62876916f, 2.92607379f, 0.622770548f, 0.247918531f, 0.175039038f, 0.00938412454f, 0.0052692336f
 };
 static const float FEATURE_INV_STD[20] = {
-    0.820290625f, 0.56106776f, 0.581436098f, 0.34507063f, 2.51383638f, 2.03658104f, 0.2775307f, 2.0663166f, 1.55450201f, 0.437767863f,
-    1.20475042f, 1.15357602f, 2.42413449f, 0.275226802f, 0.81995362f, 0.353972912f, 0.814866006f, 1.42093229f, 6.61084461f, 11.7735872f
+    0.817737043f, 0.561068296f, 0.344790488f, 0.57867825f, 2.50997114f, 2.02257061f, 0.277189195f, 1.20899332f, 2.05623794f, 0.438013375f,
+    1.54622483f, 1.16225743f, 2.43477321f, 0.275428563f, 0.354213804f, 0.819078445f, 0.807386279f, 1.4156481f, 6.56112957f, 11.2485685f
 };
