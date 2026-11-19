@@ -1,0 +1,9 @@
+Wi-Fi power save,Protocol,Messages,Failed,Energy per message above idle - mean (uJ),Energy per message above idle - std (uJ),Energy per message above idle - median (uJ),Latency send to done - mean (ms),Latency send to done - median (ms),Latency send to done - 95th percentile (ms),Average power during slot (mW),"Idle power, Wi-Fi connected (mW)",Slot length (s)
+Power save off,MQTT QoS 0,20,0,338.264,461.096,328.23,1.885,1.86,2.0515,567.727,567.385,0.989174
+Power save off,MQTT QoS 1,10,0,2161.4,478.238,2300.93,33.988,11.315,94.373,569.118,566.932,0.989135
+Power save off,CoAP NON,10,0,818.582,802.206,625.368,1.768,1.76,1.8865,567.76,566.932,0.9891
+Power save off,CoAP CON,10,0,2266.89,535.967,2105.35,49.979,27.63,114.961,569.224,566.932,0.989197
+Modem sleep,MQTT QoS 0,10,0,5234.32,34101.1,1847.27,2.198,2.335,2.4655,314.596,309.304,0.989124
+Modem sleep,MQTT QoS 1,10,0,73755.8,50554.4,70615.5,26.411,9.345,92.8315,383.88,309.304,0.989126
+Modem sleep,CoAP NON,10,0,75295.7,59647.1,66941.2,2.184,2.27,2.4715,385.434,309.304,0.989123
+Modem sleep,CoAP CON,10,0,106099,44605.6,116374,70.622,23.685,203.54,416.586,309.304,0.98906

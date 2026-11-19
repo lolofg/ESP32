@@ -1,0 +1,4 @@
+.pio
+.venv
+main/secrets.h
+managed_components/

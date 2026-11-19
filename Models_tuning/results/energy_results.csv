@@ -1,0 +1,25 @@
+Project,Model,Block (D1-D4),Input,Rounds,Self-test and checks OK,Inferences per block,Block length (ms),Time per inference (us),Average current during block (mA),Average current while idle (mA),Average power during block (mW),Average power while idle (mW),Energy per inference - total (uJ),Energy per inference - std over rounds (uJ),Energy per inference - above idle (uJ),Energy per inference - above busy-loop baseline (uJ),Energy per inference at the 3.3 V rail - estimate (uJ),Supply voltage (V)
+-,"Baseline (busy loop, no model)",0,-,3,True,0,999.977,,64.1102,37.5398,320.551,187.699,,,,,,5
+-,Preprocessing only (log1p + z-score),12,raw (preprocessing only),3,True,80000,880.453,11.0057,73.9543,39.0158,369.771,195.079,4.06958,0.0134252,1.92261,0.541706,2.68592,5
+01_decision_tree,DecisionTree,1,preprocessed (model only),3,True,640000,603.29,0.942641,78.4889,39.0364,392.444,195.182,0.369934,0.000957779,0.185947,0.0677698,0.244156,5
+02_random_forest,RandomForest,2,preprocessed (model only),3,True,100000,1971.29,19.7129,75.8479,39.0425,379.239,195.212,7.47589,0.0165583,3.6277,1.15692,4.93409,5
+02b_xgboost,XGBoost,3,preprocessed (model only),3,True,44000,599.723,13.6301,79.9914,39.0772,399.957,195.386,5.45145,0.00602146,2.78832,1.08231,3.59795,5
+03_logistic_regression,LogisticRegression,4,preprocessed (model only),3,True,560000,961.03,1.71612,75.0196,39.0711,375.098,195.355,0.643715,0.00135378,0.308461,0.0936101,0.424852,5
+04_svm,LinearSVM,5,preprocessed (model only),3,True,1.8e+06,975.7,0.542056,79.1722,39.0941,395.861,195.471,0.214579,0.000175783,0.108623,0.0408223,0.141622,5
+04b_svm_rbf,RBF_SVM,6,preprocessed (model only),3,True,2000,917.607,458.803,74.4474,39.1282,372.237,195.641,170.783,0.646359,81.0227,23.7137,112.717,5
+05_naive_bayes,GaussianNB,7,preprocessed (model only),3,True,260000,965.43,3.71319,72.4502,39.124,362.251,195.62,1.34511,0.00390212,0.618732,0.15484,0.887771,5
+06_kmeans,KMeansAnomaly,8,preprocessed (model only),3,True,20000,952.677,47.6338,73.1515,39.1289,365.758,195.644,17.4224,0.050419,8.10315,2.15338,11.4988,5
+07_mlp,MLP_int8,9,preprocessed (model only),3,True,4400,969.21,220.275,77.3899,39.1356,386.949,195.678,85.2353,0.257703,42.1323,14.626,56.2553,5
+08_cnn1d,CNN1D_int8,10,preprocessed (model only),3,True,1200,827.79,689.825,77.506,39.1671,387.53,195.835,267.33,2.3887,132.234,46.2004,176.437,5
+09_autoencoder,Autoencoder_int8,11,preprocessed (model only),3,True,13200,994.53,75.3432,80.0148,39.1631,400.074,195.815,30.1429,0.0582601,15.3895,5.99155,19.8943,5
+01_decision_tree,DecisionTree,1,raw (preprocessing + model),3,True,72000,927.643,12.8839,75.7716,39.1734,378.858,195.867,4.88118,0.00871606,2.35765,0.751226,3.22158,5
+02_random_forest,RandomForest,2,raw (preprocessing + model),3,True,44000,1859.25,42.2558,75.1412,39.1747,375.706,195.874,15.8757,0.0476715,7.59896,2.33063,10.478,5
+02b_xgboost,XGBoost,3,raw (preprocessing + model),3,True,28000,796.353,28.4412,78.1598,39.1661,390.799,195.831,11.1148,0.0402725,5.54513,1.99794,7.33576,5
+03_logistic_regression,LogisticRegression,4,raw (preprocessing + model),3,True,68000,862.383,12.6821,74.7632,39.1806,373.816,195.903,4.74077,0.00968231,2.25631,0.675514,3.12891,5
+04_svm,LinearSVM,5,raw (preprocessing + model),3,True,76000,873.97,11.4996,74.9363,39.2019,374.682,196.009,4.30869,0.0110527,2.05466,0.622485,2.84374,5
+04b_svm_rbf,RBF_SVM,6,raw (preprocessing + model),3,True,2000,953.17,476.585,74.7728,39.2005,373.864,196.002,178.178,0.538715,84.7662,25.4083,117.597,5
+05_naive_bayes,GaussianNB,7,raw (preprocessing + model),3,True,60000,885.47,14.7578,74.3562,39.2247,371.781,196.123,5.48668,0.0129833,2.59232,0.756045,3.62121,5
+06_kmeans,KMeansAnomaly,8,raw (preprocessing + model),3,True,16000,965.28,60.33,74.532,39.2493,372.66,196.246,22.4826,0.0673612,10.643,3.14376,14.8385,5
+07_mlp,MLP_int8,9,raw (preprocessing + model),3,True,4000,927.083,231.771,77.4215,39.248,387.107,196.24,89.7202,0.220088,44.2375,15.4259,59.2153,5
+08_cnn1d,CNN1D_int8,10,raw (preprocessing + model),3,True,1200,955.767,796.472,76.3498,39.2506,381.749,196.253,304.052,4.16539,147.736,48.7325,200.675,5
+09_autoencoder,Autoencoder_int8,11,raw (preprocessing + model),3,True,11200,977.187,87.2488,79.5385,39.2616,397.692,196.308,34.6982,0.111929,17.5706,6.73052,22.9008,5

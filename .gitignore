@@ -1,0 +1,6 @@
+.pio/
+.venv/
+managed_components/
+build/
+Models_tuning/Power_recording.csv
+Comunication_energy/results/Power_communicatrion.csv

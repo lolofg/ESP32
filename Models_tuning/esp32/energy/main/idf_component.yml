@@ -1,0 +1,9 @@
+## ESP-IDF Component Manager: downloads TensorFlow Lite Micro for ESP32
+## (with the ESP-NN optimised kernels) on the first build.
+## Pinned to the versions the single-model projects (07_mlp, ...) were built
+## with, so the NN numbers are comparable (1.4.3 also moved a header that
+## model.cpp includes).
+dependencies:
+  idf: ">=5.0"
+  espressif/esp-tflite-micro: "==1.4.1"
+  espressif/esp-nn: "==1.4.1"
